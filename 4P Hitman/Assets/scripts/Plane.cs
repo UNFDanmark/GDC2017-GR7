@@ -18,8 +18,8 @@ public class Plane : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-	
-	}
+        timeOfLastShot = -reloadTime;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -27,6 +27,12 @@ public class Plane : MonoBehaviour {
         //myRigidbody.rotation = transform.Rotate(Vector3.right * Time.deltaTime);
 
         transform.Rotate(0, rotationSpeed * Input.GetAxis("Horizontal") * Time.deltaTime, 0);
+
+        if ((Input.GetKeyDown(KeyCode.J)))
+        {
+            Shoot();
+            print("Shoot");
+        }
     }
 
     void FixedUpdate()
