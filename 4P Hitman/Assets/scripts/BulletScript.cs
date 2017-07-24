@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        myRigidbody.velocity = transform.forward * initialVelocity.x + transform.up * initialVelocity.y;
+        myRigidbody.velocity = transform.forward * initialVelocity.x;
 
         Destroy(gameObject, lifeTime);
     }
