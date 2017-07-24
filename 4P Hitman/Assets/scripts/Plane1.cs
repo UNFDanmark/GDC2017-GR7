@@ -13,6 +13,7 @@ public class Plane1 : MonoBehaviour
     public int turn = 0;
     public int rotate = 0;
     public int maxRotate = 30;
+    public int endOfMap = 122;
 
     void Awake()
     {
@@ -36,6 +37,8 @@ public class Plane1 : MonoBehaviour
         {
             Shoot();
         }
+
+        InfiniteMap();
     }
 
     void FixedUpdate()
@@ -93,4 +96,18 @@ public class Plane1 : MonoBehaviour
             turn = 0;
         }
     }
+
+    public void InfiniteMap()
+    {
+        if (GameObject.Find("Plane1").transform.position.x > endOfMap || GameObject.Find("Plane1").transform.position.x < -endOfMap)
+        {
+            transform.position = new Vector3(-GameObject.Find("Plane1").transform.position.x, 3000, GameObject.Find("Plane1").transform.position.z);
+        }
+
+        if (GameObject.Find("Plane1").transform.position.z > endOfMap || GameObject.Find("Plane1").transform.position.z < -endOfMap)
+        {
+            transform.position = new Vector3(GameObject.Find("Plane1").transform.position.x, 3000, -GameObject.Find("Plane1").transform.position.z);
+        }
+    }
+    
 }
