@@ -10,23 +10,44 @@ ModelImporter:
     100004: "D\xE6k"
     100006: Karoseri
     100008: //RootNode
+    100010: Cylinder001
+    100012: Cylinder002
+    100014: Object
+    100016: Propel
     400000: Box001
     400002: Box002
     400004: "D\xE6k"
     400006: Karoseri
     400008: //RootNode
+    400010: Cylinder001
+    400012: Cylinder002
+    400014: Object
+    400016: Propel
     2300000: Box001
     2300002: Box002
     2300004: "D\xE6k"
     2300006: Karoseri
+    2300008: Cylinder001
+    2300010: Cylinder002
+    2300012: Object
+    2300014: Propel
     3300000: Box001
     3300002: Box002
     3300004: "D\xE6k"
     3300006: Karoseri
+    3300008: Cylinder001
+    3300010: Cylinder002
+    3300012: Object
+    3300014: Propel
     4300000: Box001
     4300002: Karoseri
     4300004: "D\xE6k"
     4300006: Box002
+    4300008: Object
+    4300010: Cylinder002
+    4300012: Cylinder001
+    4300014: Propel
+    7400000: Take 001
     9500000: //RootNode
   materials:
     importMaterials: 1
