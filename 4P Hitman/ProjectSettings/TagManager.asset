@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -13,14 +14,14 @@ TagManager:
   - UI
   - 
   - 
-  - Bullet1
-  - Fly1
-  - Bullet2
-  - Fly2
-  - Bullet3
-  - Fly3
-  - Bullet4
-  - Fly4
+  - Bullet
+  - Plane
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

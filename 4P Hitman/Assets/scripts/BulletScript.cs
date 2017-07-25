@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     public Vector2 initialVelocity;
     public Rigidbody myRigidbody;
     public float lifeTime = 5;
+    public GameObject mainPlane;
 
     void Awake()
     {
@@ -27,5 +28,15 @@ public class BulletScript : MonoBehaviour
     {
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (mainPlane != other.gameObject && !other.name.StartsWith("Wing"))
+        { 
+            Destroy(gameObject);
+        }
+    }
+
+
 }
 

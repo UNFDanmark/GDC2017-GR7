@@ -17,8 +17,14 @@ public class Plane1 : MonoBehaviour
     public int endOfMap = 122;
     public bool alive = true;
     public bool deathSpin = false;
-
-    public KeyCode forward;
+    public KeyCode left;
+    public KeyCode right;
+    public KeyCode shoot;
+    public string[] planeName = {"Plane1","Plane2","Plane3","Plane4"};
+    public int famePoints = 0;
+    public float timeOfDeath = 0;
+    public Vector3 startPosition;
+    public Quaternion startRotation;
 
     void Awake()
     {
@@ -29,6 +35,8 @@ public class Plane1 : MonoBehaviour
     void Start()
     {
         timeOfLastShot = -reloadTime;
+        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -37,29 +45,37 @@ public class Plane1 : MonoBehaviour
         KeyboardInput();
 
         transform.Rotate(0, rotationSpeed * turn * Time.deltaTime, 0, Space.World);
-
-        if (Input.GetKeyDown(KeyCode.S) && alive == true)
+        
+        if (Input.GetKeyDown(shoot) && alive)
         {
             Shoot();
         }
 
         InfiniteMap();
-
     }
 
     void FixedUpdate()
     {
         RotateZ();
-        Move(moveSpeed);
+        Move(alive ? moveSpeed : moveSpeed * 2);
 
-        if (deathSpin == true)
+        if (deathSpin)
         {
             transform.Rotate(0, 0, 5);
         }
+
+        CheckRespawn();
     }
 
     public void Move(float speed)
     {
+        if (alive)
+        {
+            transform.position = new Vector3(transform.position.x, 3000, transform.position.z);
+        } else
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
+        }
         myRigidbody.velocity = transform.forward * speed;
     }
 
@@ -71,6 +87,8 @@ public class Plane1 : MonoBehaviour
 
         newBullet.transform.position = transform.position;
         newBullet.transform.rotation = transform.rotation;
+
+        newBullet.GetComponent<BulletScript>().mainPlane = gameObject;
     }
 
     public void RotateZ()
@@ -94,13 +112,13 @@ public class Plane1 : MonoBehaviour
 
     public void KeyboardInput()
     {
-        if (alive == true)
+        if (alive)
         {
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(left))
             {
                 turn = -1;
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(right))
             {
                 turn = 1;
             }
@@ -114,33 +132,57 @@ public class Plane1 : MonoBehaviour
 
     public void InfiniteMap()
     {
-        if (GameObject.Find("Plane1").transform.position.x > endOfMap || GameObject.Find("Plane1").transform.position.x < -endOfMap)
-        {
-            transform.position = new Vector3(-GameObject.Find("Plane1").transform.position.x, 3000, GameObject.Find("Plane1").transform.position.z);
-        }
+        if(alive) {
+            if (transform.position.x > endOfMap || transform.position.x < -endOfMap)
+            {
+                transform.position = new Vector3(-(transform.position.x * 0.95f), 3000, transform.position.z);
+            }
 
-        if (GameObject.Find("Plane1").transform.position.z > endOfMap || GameObject.Find("Plane1").transform.position.z < -endOfMap)
-        {
-            transform.position = new Vector3(GameObject.Find("Plane1").transform.position.x, 3000, -GameObject.Find("Plane1").transform.position.z);
+            if (transform.position.z > endOfMap || transform.position.z < -endOfMap)
+            {
+                transform.position = new Vector3(transform.position.x, 3000, -(transform.position.z * 0.95f));
+            }
         }
     }
 
     public void Death()
     {
+        print("dead");
         alive = false;
         turn = 0;
         transform.Rotate(50, 0, 0);
-        endOfMap = 1000;
         deathSpin = true;
+        timeOfDeath = Time.realtimeSinceStartup;
     }
 
-    void OnCollisionEnter(Collision collision)
+    public void CheckRespawn()
     {
-        print(collision.gameObject.name);
-        if (collision.collider.CompareTag("Bullet"))
+        if (!alive && Time.realtimeSinceStartup - timeOfDeath > 4)
         {
-            print("looool");
-            Death();
+            alive = true;
+            deathSpin = false;
+            transform.rotation = startRotation;
+            transform.position = startPosition;
         }
     }
+
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.name.StartsWith("Bullet")
+            && other.gameObject.GetComponent<BulletScript>().mainPlane != this.gameObject)
+        {
+            Destroy(other.gameObject);
+            if (alive)
+            {
+                Death();
+            }
+        } else if (other.gameObject.name.StartsWith("Plane"))
+        {
+            Death();
+        }
+        
+    }
+
 }

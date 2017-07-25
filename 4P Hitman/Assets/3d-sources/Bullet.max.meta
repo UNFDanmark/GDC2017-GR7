@@ -1,43 +1,15 @@
 fileFormatVersion: 2
-guid: 6ee3343dcaa40594298d1a007b1d6a35
-timeCreated: 1500997811
+guid: 7399daf2c3f81de4b81f605015d44e83
+timeCreated: 1501001451
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Box001
-    100002: Box002
-    100004: Cylinder002
-    100006: Object
-    100008: //RootNode
-    100010: Propel
-    100012: Propel001
-    400000: Box001
-    400002: Box002
-    400004: Cylinder002
-    400006: Object
-    400008: //RootNode
-    400010: Propel
-    400012: Propel001
-    2300000: Box001
-    2300002: Box002
-    2300004: Cylinder002
-    2300006: Object
-    2300008: Propel
-    2300010: Propel001
-    3300000: Box001
-    3300002: Box002
-    3300004: Cylinder002
-    3300006: Object
-    3300008: Propel
-    3300010: Propel001
-    4300000: Box001
-    4300002: Object
-    4300004: Cylinder002
-    4300006: Propel
-    4300008: Propel001
-    4300010: Box002
-    7400000: Take 001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder001
     9500000: //RootNode
   materials:
     importMaterials: 1
