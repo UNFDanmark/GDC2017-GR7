@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Plane1 : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class Plane1 : MonoBehaviour
     public int rotate = 0;
     public int maxRotate = 30;
     public int endOfMap = 122;
+    public bool alive = true;
+    public bool deathSpin = false;
+
+    public KeyCode forward;
 
     void Awake()
     {
@@ -33,18 +38,24 @@ public class Plane1 : MonoBehaviour
 
         transform.Rotate(0, rotationSpeed * turn * Time.deltaTime, 0, Space.World);
 
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && alive == true)
         {
             Shoot();
         }
 
         InfiniteMap();
+
     }
 
     void FixedUpdate()
     {
         RotateZ();
         Move(moveSpeed);
+
+        if (deathSpin == true)
+        {
+            transform.Rotate(0, 0, 5);
+        }
     }
 
     public void Move(float speed)
@@ -83,18 +94,22 @@ public class Plane1 : MonoBehaviour
 
     public void KeyboardInput()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (alive == true)
         {
-            turn = -1;
+            if (Input.GetKey(KeyCode.A))
+            {
+                turn = -1;
+            }
+            else if (Input.GetKey(KeyCode.D))
+            {
+                turn = 1;
+            }
+            else
+            {
+                turn = 0;
+            }
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            turn = 1;
-        }
-        else
-        {
-            turn = 0;
-        }
+
     }
 
     public void InfiniteMap()
@@ -109,5 +124,23 @@ public class Plane1 : MonoBehaviour
             transform.position = new Vector3(GameObject.Find("Plane1").transform.position.x, 3000, -GameObject.Find("Plane1").transform.position.z);
         }
     }
-    
+
+    public void Death()
+    {
+        alive = false;
+        turn = 0;
+        transform.Rotate(50, 0, 0);
+        endOfMap = 1000;
+        deathSpin = true;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.name);
+        if (collision.collider.CompareTag("Bullet"))
+        {
+            print("looool");
+            Death();
+        }
+    }
 }
