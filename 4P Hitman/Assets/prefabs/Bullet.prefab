@@ -137,7 +137,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 1
+  m_Time: 0.1
   m_StartWidth: 1
   m_EndWidth: 0
   m_Colors:
@@ -152,10 +152,10 @@ TrailRenderer:
       rgba: 1694498815
     m_Color[3]:
       serializedVersion: 2
-      rgba: 1694498815
+      rgba: 3405775103
     m_Color[4]:
       serializedVersion: 2
-      rgba: 1694498815
+      rgba: 16777215
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
 --- !u!114 &114000010493832872
