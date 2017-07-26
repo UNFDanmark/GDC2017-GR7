@@ -20,11 +20,11 @@ public class Plane1 : MonoBehaviour
     public KeyCode left;
     public KeyCode right;
     public KeyCode shoot;
-    public string[] planeName = {"Plane1","Plane2","Plane3","Plane4"};
     public int famePoints = 0;
     public float timeOfDeath = 0;
     public Vector3 startPosition;
     public Quaternion startRotation;
+    public GameObject targetPlane;
 
     void Awake()
     {
@@ -37,6 +37,8 @@ public class Plane1 : MonoBehaviour
         timeOfLastShot = -reloadTime;
         startPosition = transform.position;
         startRotation = transform.rotation;
+
+        RandomTarget();
     }
 
     // Update is called once per frame
@@ -76,6 +78,7 @@ public class Plane1 : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         }
+        print(transform.forward);
         myRigidbody.velocity = transform.forward * speed;
     }
 
@@ -100,13 +103,13 @@ public class Plane1 : MonoBehaviour
         }
         else if (rotate <= maxRotate && rotate > 0 && (turn == 0 || turn == -1))
         {
-            transform.Rotate(0, 0, 1);
-            rotate = rotate - 1;
+            transform.Rotate(0, 0, 3);
+            rotate = rotate - 3;
         }
         else if (rotate >= -maxRotate && rotate < 0 && (turn == 0 || turn == 1))
         {
-            transform.Rotate(0, 0, -1);
-            rotate = rotate + 1;
+            transform.Rotate(0, 0, -3);
+            rotate = rotate + 3;
         }
     }
 
@@ -182,7 +185,24 @@ public class Plane1 : MonoBehaviour
         {
             Death();
         }
-        
+         
     }
 
+    public void RandomTarget()
+    {
+        int index = 0;
+
+        GameObject[] others = new GameObject[3];
+        
+        foreach( GameObject obj in GameObject.FindGameObjectsWithTag("Plane"))
+        {
+            if (obj != this.gameObject)
+            {
+                others[index] = obj;
+                index++;
+            }
+        }
+
+        targetPlane = others[UnityEngine.Random.Range(0, 3)];
+    }
 }

@@ -29,6 +29,7 @@ public class BulletScript : MonoBehaviour
 
     }
 
+    /*
     void OnTriggerEnter(Collider other)
     {
         if (mainPlane != other.gameObject && !other.name.StartsWith("Wing"))
@@ -36,7 +37,7 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    */
 
 }
 

@@ -14,6 +14,10 @@ ModelImporter:
     100012: Cylinder002
     100014: Object
     100016: Propel
+    100018: Cylinder003
+    100020: PilotHead
+    100022: Propel2
+    100024: PilotBody
     400000: Box001
     400002: Box002
     400004: "D\xE6k"
@@ -23,6 +27,10 @@ ModelImporter:
     400012: Cylinder002
     400014: Object
     400016: Propel
+    400018: Cylinder003
+    400020: PilotHead
+    400022: Propel2
+    400024: PilotBody
     2300000: Box001
     2300002: Box002
     2300004: "D\xE6k"
@@ -31,6 +39,10 @@ ModelImporter:
     2300010: Cylinder002
     2300012: Object
     2300014: Propel
+    2300016: Cylinder003
+    2300018: PilotHead
+    2300020: Propel2
+    2300022: PilotBody
     3300000: Box001
     3300002: Box002
     3300004: "D\xE6k"
@@ -39,6 +51,10 @@ ModelImporter:
     3300010: Cylinder002
     3300012: Object
     3300014: Propel
+    3300016: Cylinder003
+    3300018: PilotHead
+    3300020: Propel2
+    3300022: PilotBody
     4300000: Box001
     4300002: Karoseri
     4300004: "D\xE6k"
@@ -47,6 +63,10 @@ ModelImporter:
     4300010: Cylinder002
     4300012: Cylinder001
     4300014: Propel
+    4300016: Propel2
+    4300018: Cylinder003
+    4300020: PilotHead
+    4300022: PilotBody
     7400000: Take 001
     9500000: //RootNode
   materials:

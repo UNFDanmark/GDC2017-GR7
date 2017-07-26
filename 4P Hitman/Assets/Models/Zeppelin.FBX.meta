@@ -1,36 +1,22 @@
 fileFormatVersion: 2
-guid: b434b1f1e48c4e1488367b87ed573aa5
-timeCreated: 1500996078
+guid: fed2a0b7026e52144987ae3dd531e572
+timeCreated: 1501019210
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Cylinder002
-    100002: //RootNode
-    100004: Propel
-    100006: Propel001
-    100008: Propel2
-    400000: Cylinder002
-    400002: //RootNode
-    400004: Propel
-    400006: Propel001
-    400008: Propel2
-    2300000: Cylinder002
-    2300002: //RootNode
-    2300004: Propel
-    2300006: Propel001
-    2300008: Propel2
-    3300000: Cylinder002
-    3300002: //RootNode
-    3300004: Propel
-    3300006: Propel001
-    3300008: Propel2
-    4300000: Object
-    4300002: Cylinder002
-    4300004: Propel
-    4300006: Propel001
-    4300008: Propel2
-    7400000: Take 001
+    100000: Ballon
+    100002: Cockpit
+    100004: //RootNode
+    400000: Ballon
+    400002: Cockpit
+    400004: //RootNode
+    2300000: Ballon
+    2300002: Cockpit
+    3300000: Ballon
+    3300002: Cockpit
+    4300000: Ballon
+    4300002: Cockpit
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -56,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 2
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
