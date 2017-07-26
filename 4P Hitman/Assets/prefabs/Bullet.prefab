@@ -137,7 +137,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Time: 0.1
+  m_Time: 0.25
   m_StartWidth: 1
   m_EndWidth: 0
   m_Colors:
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d44f4d1a6d62140b2ada6e802359e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialVelocity: {x: 120, y: 0}
+  initialVelocity: {x: 180, y: 0}
   myRigidbody: {fileID: 54000013932253512}
   lifeTime: 5
   mainPlane: {fileID: 0}

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class Plane1 : MonoBehaviour
 {
@@ -24,9 +25,13 @@ public class Plane1 : MonoBehaviour
     public int famePoints = 0;
     public float trailTime = 1;
     public float timeOfDeath = 0;
+    public GameObject scoreUIText;
     public Vector3 startPosition;
     public Quaternion startRotation;
-    public GameObject targetPlane;
+    public GameObject targetPlane = null;
+    public List<GameObject> planesTargettingMe = new List<GameObject>();
+    public Color color;
+    public TrailRenderer trailColor;
 
     void Awake()
     {
@@ -60,9 +65,37 @@ public class Plane1 : MonoBehaviour
         {
             this.gameObject.GetComponent<TrailRenderer>().time = trailTime;
         }
-        
+
+
+
         InfiniteMap();
 
+
+        if (GameController.gamemode == GameController.MODE_TARGETS && planesTargettingMe.Count == 0)
+        {
+            trailColor.time = 0;
+        } else if(GameController.gamemode == GameController.MODE_TARGETS)
+        {
+            /*
+            float sumR = 0;
+            float sumG = 0;
+            float sumB = 0;
+
+            foreach (GameObject obj in planesTargettingMe) {
+                Plane1 otherPlane = obj.GetComponent<Plane1>();
+                sumR += otherPlane.color.r;
+                sumG += otherPlane.color.g;
+                sumB += otherPlane.color.b;
+            }
+
+            Color newColor = new Color(sumR / planesTargettingMe.Count, sumG / planesTargettingMe.Count, sumB / planesTargettingMe.Count);
+            trailColor.material.color = newColor;*/
+
+            int colorPick = ((int) (Time.time * 2)) % planesTargettingMe.Count;
+            trailColor.material.color = planesTargettingMe[colorPick].GetComponent<Plane1>().color;
+        }
+        UpdateTargetingMe();
+        CheckRespawn();
     }
 
     void FixedUpdate()
@@ -75,7 +108,13 @@ public class Plane1 : MonoBehaviour
             transform.Rotate(0, 0, 5);
         }
 
-        CheckRespawn();
+        scoreUIText.GetComponent<Text>().text = famePoints.ToString();
+
+        if (alive && GameController.gamemode == GameController.MODE_TARGETS && targetPlane == null)
+        {
+            RandomTarget();
+        }
+
     }
 
     public void Move(float speed)
@@ -87,7 +126,6 @@ public class Plane1 : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y-1, transform.position.z);
         }
-        print(transform.forward);
         myRigidbody.velocity = transform.forward * speed;
     }
 
@@ -163,7 +201,6 @@ public class Plane1 : MonoBehaviour
 
     public void Death()
     {
-        print("dead");
         alive = false;
         turn = 0;
         transform.Rotate(50, 0, 0);
@@ -192,33 +229,69 @@ public class Plane1 : MonoBehaviour
         if (other.gameObject.name.StartsWith("Bullet")
             && other.gameObject.GetComponent<BulletScript>().mainPlane != this.gameObject)
         {
+            Plane1 script = other.gameObject.GetComponent<BulletScript>().mainPlane.GetComponent<Plane1>();
+            print(script.targetPlane.name + gameObject.name);
+            if (GameController.gamemode == GameController.MODE_TARGETS &&
+                script.targetPlane != gameObject)
+            {
+                return;
+            }
+            
+            script.famePoints += 100;
             Destroy(other.gameObject);
+
             if (alive)
             {
                 Death();
+                RandomTarget();
+                script.RandomTarget();
             }
         } else if (other.gameObject.name.StartsWith("Plane"))
         {
             Death();
+            famePoints -= 50;
         }
          
     }
 
-    public void RandomTarget()
+    public List<GameObject> GetOtherPlanes()
     {
-        int index = 0;
+        List<GameObject> others = new List<GameObject>();
 
-        GameObject[] others = new GameObject[3];
-        
-        foreach( GameObject obj in GameObject.FindGameObjectsWithTag("Plane"))
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Plane"))
         {
             if (obj != this.gameObject)
             {
-                others[index] = obj;
-                index++;
+                others.Add(obj);
             }
         }
 
-        targetPlane = others[UnityEngine.Random.Range(0, 3)];
+        return others;
     }
+
+    public void RandomTarget()
+    {
+        targetPlane = GetOtherPlanes()[UnityEngine.Random.Range(0, 3)];
+
+        planesTargettingMe = new List<GameObject>();
+        foreach (GameObject obj in GetOtherPlanes())
+        {
+            obj.GetComponent<Plane1>().UpdateTargetingMe();
+        }
+    }
+
+    public void UpdateTargetingMe()
+    {
+        planesTargettingMe = new List<GameObject>();
+        foreach (GameObject obj in GetOtherPlanes())
+        {
+            Plane1 script = obj.GetComponent<Plane1>();
+            if (script.targetPlane == gameObject)
+            {
+                planesTargettingMe.Add(obj.gameObject);
+            }
+        }
+        
+    }
+
 }
