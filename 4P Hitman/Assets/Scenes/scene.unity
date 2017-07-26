@@ -348,7 +348,7 @@ Prefab:
     - target: {fileID: 2300002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 93dc78b88a7c1e946978c0949fa253d0, type: 2}
+      objectReference: {fileID: 2100000, guid: bfab76be4c5fe8542a3abee3b30dacf7, type: 2}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Name
       value: Plane4
@@ -363,7 +363,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_TagString
-      value: Plane
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalScale.x
@@ -391,9 +391,10 @@ GameObject:
   - 114: {fileID: 882618760}
   - 54: {fileID: 882618759}
   - 135: {fileID: 882618758}
+  - 96: {fileID: 882618762}
   m_Layer: 0
   m_Name: Plane2
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -442,16 +443,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1000013865539256, guid: 417154d217cb0d94e83de0981536c24d,
     type: 2}
   timeOfLastShot: 0
-  reloadTime: 2
+  reloadTime: 0.5
+  burstAmount: 1
   turn: 0
   rotate: 0
   maxRotate: 50
   endOfMap: 122
   alive: 1
   deathSpin: 0
-  left: 97
-  right: 100
-  shoot: 115
+  left: 106
+  right: 108
+  shoot: 107
   famePoints: 0
   timeOfDeath: 0
   startPosition: {x: 0, y: 0, z: 0}
@@ -471,6 +473,56 @@ Transform:
   - {fileID: 1509366934}
   m_Father: {fileID: 0}
   m_RootOrder: 8
+--- !u!96 &882618762
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882618757}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 0a270421212d8a74eae0d866336f5b48, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 1
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &986953286
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,9 +803,10 @@ GameObject:
   - 114: {fileID: 1286174010}
   - 54: {fileID: 1286174009}
   - 135: {fileID: 1286174008}
+  - 96: {fileID: 1286174012}
   m_Layer: 0
   m_Name: Plane3
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,16 +855,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1000013865539256, guid: 417154d217cb0d94e83de0981536c24d,
     type: 2}
   timeOfLastShot: 0
-  reloadTime: 2
+  reloadTime: 0.5
+  burstAmount: 1
   turn: 0
   rotate: 0
   maxRotate: 50
   endOfMap: 122
   alive: 1
   deathSpin: 0
-  left: 97
-  right: 100
-  shoot: 115
+  left: 276
+  right: 275
+  shoot: 274
   famePoints: 0
   timeOfDeath: 0
   startPosition: {x: 0, y: 0, z: 0}
@@ -831,6 +885,56 @@ Transform:
   - {fileID: 1685296945}
   m_Father: {fileID: 0}
   m_RootOrder: 9
+--- !u!96 &1286174012
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1286174007}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 27b3aa5ac9eea0346a9a808cedd04c5f, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 1
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1001 &1509366933
 Prefab:
   m_ObjectHideFlags: 0
@@ -873,7 +977,7 @@ Prefab:
     - target: {fileID: 2300002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 93dc78b88a7c1e946978c0949fa253d0, type: 2}
+      objectReference: {fileID: 2100000, guid: 218505499ff9a7c49ac1264a7ba73e94, type: 2}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Name
       value: Plane2
@@ -888,7 +992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_TagString
-      value: Plane
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalScale.x
@@ -943,7 +1047,7 @@ Prefab:
     - target: {fileID: 2300002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 93dc78b88a7c1e946978c0949fa253d0, type: 2}
+      objectReference: {fileID: 2100000, guid: c579718228157084397bcf198cba449f, type: 2}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Name
       value: Plane3
@@ -958,7 +1062,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_TagString
-      value: Plane
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1013,7 +1117,7 @@ Prefab:
     - target: {fileID: 2300002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 93dc78b88a7c1e946978c0949fa253d0, type: 2}
+      objectReference: {fileID: 2100000, guid: 3abba17b2877d8740bd7d3cdc4b20ada, type: 2}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_Name
       value: Plane1
@@ -1028,7 +1132,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_TagString
-      value: Plane
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalScale.x
@@ -1048,9 +1152,10 @@ GameObject:
   - 114: {fileID: 1966688993}
   - 54: {fileID: 1966688995}
   - 135: {fileID: 1966688996}
+  - 96: {fileID: 1966688997}
   m_Layer: 0
   m_Name: Plane1
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1072,7 +1177,8 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1000013865539256, guid: 417154d217cb0d94e83de0981536c24d,
     type: 2}
   timeOfLastShot: 0
-  reloadTime: 2
+  reloadTime: 0.5
+  burstAmount: 1
   turn: 0
   rotate: 0
   maxRotate: 50
@@ -1128,6 +1234,56 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4.5
   m_Center: {x: 0, y: 0, z: -1}
+--- !u!96 &1966688997
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1966688992}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 1398217663c921849afea22e0e12fe1e, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 1
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0
 --- !u!1 &2007305876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,9 +1295,10 @@ GameObject:
   - 114: {fileID: 2007305879}
   - 54: {fileID: 2007305878}
   - 135: {fileID: 2007305877}
+  - 96: {fileID: 2007305881}
   m_Layer: 0
   m_Name: Plane4
-  m_TagString: Untagged
+  m_TagString: Plane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1190,16 +1347,17 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1000013865539256, guid: 417154d217cb0d94e83de0981536c24d,
     type: 2}
   timeOfLastShot: 0
-  reloadTime: 2
+  reloadTime: 0.5
+  burstAmount: 1
   turn: 0
   rotate: 0
   maxRotate: 50
   endOfMap: 122
   alive: 1
   deathSpin: 0
-  left: 97
-  right: 100
-  shoot: 115
+  left: 260
+  right: 262
+  shoot: 261
   famePoints: 0
   timeOfDeath: 0
   startPosition: {x: 0, y: 0, z: 0}
@@ -1219,3 +1377,53 @@ Transform:
   - {fileID: 551774870}
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!96 &2007305881
+TrailRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2007305876}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 50082d8edc1c40543b1c3087d32a80ba, type: 2}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Time: 1
+  m_StartWidth: 1
+  m_EndWidth: 0
+  m_Colors:
+    m_Color[0]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[1]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[2]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[3]:
+      serializedVersion: 2
+      rgba: 4294967295
+    m_Color[4]:
+      serializedVersion: 2
+      rgba: 16777215
+  m_MinVertexDistance: 0.1
+  m_Autodestruct: 0

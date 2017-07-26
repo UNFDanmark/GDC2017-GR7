@@ -10,7 +10,8 @@ public class Plane1 : MonoBehaviour
     public float rotationSpeed = 200;
     public GameObject bulletPrefab;
     public float timeOfLastShot = 0;
-    public float reloadTime = 2;
+    public float reloadTime = 0.1f;
+    public int burstAmount = 0;
     public int turn = 0;
     public int rotate = 0;
     public int maxRotate = 30;
@@ -21,6 +22,7 @@ public class Plane1 : MonoBehaviour
     public KeyCode right;
     public KeyCode shoot;
     public int famePoints = 0;
+    public float trailTime = 1;
     public float timeOfDeath = 0;
     public Vector3 startPosition;
     public Quaternion startRotation;
@@ -41,6 +43,7 @@ public class Plane1 : MonoBehaviour
         RandomTarget();
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -48,12 +51,18 @@ public class Plane1 : MonoBehaviour
 
         transform.Rotate(0, rotationSpeed * turn * Time.deltaTime, 0, Space.World);
         
-        if (Input.GetKeyDown(shoot) && alive)
+        if (Input.GetKeyDown(shoot) && alive && (Time.time - timeOfLastShot) >= reloadTime)
         {
             Shoot();
         }
 
+        if (alive)
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time = trailTime;
+        }
+        
         InfiniteMap();
+
     }
 
     void FixedUpdate()
@@ -85,13 +94,15 @@ public class Plane1 : MonoBehaviour
 
     public void Shoot()
     {
-        timeOfLastShot = Time.time;
+
         GameObject newBullet = Instantiate(bulletPrefab);
 
         newBullet.transform.position = transform.position;
         newBullet.transform.rotation = transform.rotation;
 
         newBullet.GetComponent<BulletScript>().mainPlane = gameObject;
+
+        timeOfLastShot = Time.time;
     }
 
     public void RotateZ()
@@ -139,11 +150,13 @@ public class Plane1 : MonoBehaviour
             if (transform.position.x > endOfMap || transform.position.x < -endOfMap)
             {
                 transform.position = new Vector3(-(transform.position.x * 0.95f), 3000, transform.position.z);
+                this.gameObject.GetComponent<TrailRenderer>().time = 0;
             }
 
             if (transform.position.z > endOfMap || transform.position.z < -endOfMap)
             {
                 transform.position = new Vector3(transform.position.x, 3000, -(transform.position.z * 0.95f));
+                this.gameObject.GetComponent<TrailRenderer>().time = 0;
             }
         }
     }
@@ -166,6 +179,9 @@ public class Plane1 : MonoBehaviour
             deathSpin = false;
             transform.rotation = startRotation;
             transform.position = startPosition;
+        } else if (!alive && Time.realtimeSinceStartup - timeOfDeath > 3.8f)
+        {
+            this.gameObject.GetComponent<TrailRenderer>().time = 0;
         }
     }
 
