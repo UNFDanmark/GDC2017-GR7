@@ -6,7 +6,7 @@ using System;
 public class BackgroundScript : MonoBehaviour {
 
     public int backgroundSpeed = 5;
-    public int backgroundTravel = 2006;
+    public int backgroundTravel = 4000;
     public int backgroundCounter = 0;
 
 	// Use this for initialization
@@ -31,6 +31,10 @@ public class BackgroundScript : MonoBehaviour {
             transform.position = new Vector3(transform.position.x + backgroundSpeed, transform.position.y, transform.position.z);
         }
         
+        /*if(transform.position.x > 3003)
+        {
+            transform.position = new Vector3(-1003, transform.position.y, transform.position.z);
+        }*/
 
     } 
 }

@@ -1,40 +1,33 @@
 fileFormatVersion: 2
-guid: 5e12ea1ef82710743b63a5945011be5d
-timeCreated: 1501078875
+guid: 91949be343a157f4d8e1aa03c7a284d0
+timeCreated: 1501102706
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: Body
-    100002: //RootNode
-    100004: Seagull_png
-    100006: LWing
-    100008: LWing2
-    100010: LWingNub
-    100012: Master
-    100014: RWing
-    100016: RWing2
-    100018: RWingNub
-    100020: Spine
-    100022: SpineNub
+    100002: LWing
+    100004: LWing2
+    100006: LWingNub
+    100008: Master
+    100010: RWing
+    100012: RWing2
+    100014: RWingNub
+    100016: //RootNode
+    100018: Spine
+    100020: SpineNub
     400000: Body
-    400002: //RootNode
-    400004: Seagull_png
-    400006: LWing
-    400008: LWing2
-    400010: LWingNub
-    400012: Master
-    400014: RWing
-    400016: RWing2
-    400018: RWingNub
-    400020: Spine
-    400022: SpineNub
-    2300000: Body
-    2300002: Seagull_png
-    3300000: Body
-    3300002: Seagull_png
-    4300000: Seagull_png
-    4300002: Body
+    400002: LWing
+    400004: LWing2
+    400006: LWingNub
+    400008: Master
+    400010: RWing
+    400012: RWing2
+    400014: RWingNub
+    400016: //RootNode
+    400018: Spine
+    400020: SpineNub
+    4300000: Body
     7400000: Take 001
     9500000: //RootNode
     13700000: Body
