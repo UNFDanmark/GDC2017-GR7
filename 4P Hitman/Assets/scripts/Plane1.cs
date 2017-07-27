@@ -35,6 +35,8 @@ public class Plane1 : MonoBehaviour
     public List<GameObject> planesTargettingMe = new List<GameObject>();
     public Color color;
     public TrailRenderer trailColor;
+    public SoundScript soundScript;
+    public GameObject soundManager;
 
 
     void Awake()
@@ -44,7 +46,9 @@ public class Plane1 : MonoBehaviour
 
     // Use this for initialization
     void Start()
+
     {
+        soundScript = soundManager.GetComponent<SoundScript>();
         timeOfLastShot = -reloadTime;
         startPosition = transform.position;
         startRotation = transform.rotation;
@@ -254,6 +258,7 @@ public class Plane1 : MonoBehaviour
             
             script.famePoints += 100;
             Destroy(other.gameObject);
+            soundScript.TauntsFunction(id);
 
             if (alive)
             {

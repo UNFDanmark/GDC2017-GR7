@@ -869,6 +869,8 @@ MonoBehaviour:
   planesTargettingMe: []
   color: {r: 0.8196079, g: 0.003921569, b: 0.14117648, a: 1}
   trailColor: {fileID: 882618762}
+  soundScript: {fileID: 0}
+  soundManager: {fileID: 1534766311}
 --- !u!4 &882618761
 Transform:
   m_ObjectHideFlags: 0
@@ -1388,6 +1390,8 @@ MonoBehaviour:
   planesTargettingMe: []
   color: {r: 0.8941177, g: 0.8235295, b: 0.19215688, a: 1}
   trailColor: {fileID: 1286174012}
+  soundScript: {fileID: 0}
+  soundManager: {fileID: 1534766311}
 --- !u!4 &1286174011
 Transform:
   m_ObjectHideFlags: 0
@@ -1690,6 +1694,8 @@ GameObject:
   - 82: {fileID: 1534766313}
   - 82: {fileID: 1534766312}
   - 114: {fileID: 1534766315}
+  - 114: {fileID: 1534766317}
+  - 82: {fileID: 1534766316}
   m_Layer: 0
   m_Name: Soundmanager
   m_TagString: Untagged
@@ -1874,6 +1880,99 @@ MonoBehaviour:
   pause: 0
   countdown: 120
   scoreUIText: {fileID: 905739}
+--- !u!82 &1534766316
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534766311}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &1534766317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1534766311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6577cbe50df61b049bd736bb92a58231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Taunts:
+  - {fileID: 8300000, guid: 55286f3d7c5a964439c3e5c30470acb0, type: 3}
+  - {fileID: 8300000, guid: cd2687d64f67a0444b78c7552d521e19, type: 3}
+  - {fileID: 8300000, guid: e917078ca3a4dec4c99264136af37caa, type: 3}
+  - {fileID: 8300000, guid: beb418c9aac2a5f4bbdf5ca2bd066d86, type: 3}
+  Audio: {fileID: 1534766316}
+  tid: 0
+  Tauntdelay: 5
 --- !u!1 &1679134323
 GameObject:
   m_ObjectHideFlags: 0
@@ -2358,6 +2457,8 @@ MonoBehaviour:
   planesTargettingMe: []
   color: {r: 0.9333334, g: 0.93725497, b: 0.9333334, a: 1}
   trailColor: {fileID: 1966688997}
+  soundScript: {fileID: 0}
+  soundManager: {fileID: 1534766311}
 --- !u!4 &1966688994
 Transform:
   m_ObjectHideFlags: 0
@@ -2535,6 +2636,8 @@ MonoBehaviour:
   planesTargettingMe: []
   color: {r: 0.09411766, g: 0.70980394, b: 0.34117648, a: 1}
   trailColor: {fileID: 2007305881}
+  soundScript: {fileID: 0}
+  soundManager: {fileID: 1534766311}
 --- !u!4 &2007305880
 Transform:
   m_ObjectHideFlags: 0
