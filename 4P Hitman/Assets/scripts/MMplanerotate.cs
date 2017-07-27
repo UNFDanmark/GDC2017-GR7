@@ -17,11 +17,12 @@ public class MMplanerotate : MonoBehaviour {
         GameObject.Find("CreditsButton").GetComponent<Button>().onClick.AddListener(OnCreditsClick);
         GameObject.Find("FFAButton").GetComponent<Button>().onClick.AddListener(OnFFAClick);
         GameObject.Find("TargetsButton").GetComponent<Button>().onClick.AddListener(OnTargetsClick);
-        FixedUpdate();
     }
 
     // Update is called once per frame
     void Update () {
+
+
 
     }
 

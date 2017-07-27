@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Plane
+  - SoundManager
+  - MenuMusic
   layers:
   - Default
   - TransparentFX
