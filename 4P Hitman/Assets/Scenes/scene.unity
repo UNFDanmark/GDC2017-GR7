@@ -840,6 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03062a6537c3fa54c849a4f2f479976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   moveSpeed: 60
   myRigidbody: {fileID: 882618759}
   rotationSpeed: 200
@@ -860,12 +861,13 @@ MonoBehaviour:
   famePoints: 0
   trailTime: 1
   timeOfDeath: 0
+  respawnProtection: 0.5
   scoreUIText: {fileID: 1725315974}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   targetPlane: {fileID: 0}
   planesTargettingMe: []
-  color: {r: 0.8196079, g: 0.003921569, b: 0.14117648, a: 0}
+  color: {r: 0.8196079, g: 0.003921569, b: 0.14117648, a: 1}
   trailColor: {fileID: 882618762}
 --- !u!4 &882618761
 Transform:
@@ -1357,6 +1359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03062a6537c3fa54c849a4f2f479976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 2
   moveSpeed: 60
   myRigidbody: {fileID: 1286174009}
   rotationSpeed: 200
@@ -1377,12 +1380,13 @@ MonoBehaviour:
   famePoints: 0
   trailTime: 1
   timeOfDeath: 0
+  respawnProtection: 0.5
   scoreUIText: {fileID: 1679134323}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   targetPlane: {fileID: 0}
   planesTargettingMe: []
-  color: {r: 0.8941177, g: 0.8235295, b: 0.19215688, a: 0}
+  color: {r: 0.8941177, g: 0.8235295, b: 0.19215688, a: 1}
   trailColor: {fileID: 1286174012}
 --- !u!4 &1286174011
 Transform:
@@ -2325,6 +2329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03062a6537c3fa54c849a4f2f479976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   moveSpeed: 60
   myRigidbody: {fileID: 1966688995}
   rotationSpeed: 200
@@ -2345,12 +2350,13 @@ MonoBehaviour:
   famePoints: 0
   trailTime: 1
   timeOfDeath: 0
+  respawnProtection: 0.5
   scoreUIText: {fileID: 617521775}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   targetPlane: {fileID: 0}
   planesTargettingMe: []
-  color: {r: 0.9333334, g: 0.93725497, b: 0.9333334, a: 0}
+  color: {r: 0.9333334, g: 0.93725497, b: 0.9333334, a: 1}
   trailColor: {fileID: 1966688997}
 --- !u!4 &1966688994
 Transform:
@@ -2500,6 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03062a6537c3fa54c849a4f2f479976b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3
   moveSpeed: 60
   myRigidbody: {fileID: 2007305878}
   rotationSpeed: 200
@@ -2520,12 +2527,13 @@ MonoBehaviour:
   famePoints: 0
   trailTime: 1
   timeOfDeath: 0
+  respawnProtection: 0.5
   scoreUIText: {fileID: 1462470124}
   startPosition: {x: 0, y: 0, z: 0}
   startRotation: {x: 0, y: 0, z: 0, w: 0}
   targetPlane: {fileID: 0}
   planesTargettingMe: []
-  color: {r: 0.09411766, g: 0.70980394, b: 0.34117648, a: 0}
+  color: {r: 0.09411766, g: 0.70980394, b: 0.34117648, a: 1}
   trailColor: {fileID: 2007305881}
 --- !u!4 &2007305880
 Transform:

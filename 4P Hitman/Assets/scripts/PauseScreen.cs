@@ -13,6 +13,7 @@ public class PauseScreen : MonoBehaviour {
     public float countdown = 120;
     public GameObject scoreUIText;
     private float timeRemaining = 120;
+    public static List<ScoreContext> scores = new List<ScoreContext>();
 
     // Use this for initialization
     void Start () {
@@ -66,6 +67,13 @@ public class PauseScreen : MonoBehaviour {
     }
     void OnEndRoundClick()
     {
+        scores = new List<ScoreContext>();
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Plane"))
+        {
+            Plane1 plane = obj.GetComponent<Plane1>();
+            scores.Add(new ScoreContext(plane.id, plane.famePoints, plane.color));
+        }
+
         SceneManager.LoadScene("RoundOver", LoadSceneMode.Single);
         pause = false;
     }

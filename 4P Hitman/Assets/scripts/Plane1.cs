@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class Plane1 : MonoBehaviour
 {
+    public int id;
+
     public float moveSpeed = 40;
     public Rigidbody myRigidbody;
     public float rotationSpeed = 200;
@@ -103,7 +105,6 @@ public class Plane1 : MonoBehaviour
         UpdateTargetingMe();
         CheckRespawn();
 
-        print(respawnProtection);
     }
 
     void FixedUpdate()
