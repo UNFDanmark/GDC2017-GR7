@@ -17,6 +17,7 @@ public class MMplanerotate : MonoBehaviour {
         GameObject.Find("CreditsButton").GetComponent<Button>().onClick.AddListener(OnCreditsClick);
         GameObject.Find("FFAButton").GetComponent<Button>().onClick.AddListener(OnFFAClick);
         GameObject.Find("TargetsButton").GetComponent<Button>().onClick.AddListener(OnTargetsClick);
+        FixedUpdate();
     }
 
     // Update is called once per frame
@@ -27,7 +28,6 @@ public class MMplanerotate : MonoBehaviour {
     void FixedUpdate()
     {
         transform.Rotate(0, spinbot, 0, Space.World);
-
     }
 
     void OnExitClick()
@@ -42,10 +42,11 @@ public class MMplanerotate : MonoBehaviour {
     void OnFFAClick()
     {
         SceneManager.LoadScene("Intermission", LoadSceneMode.Single);
-        
+        GameController.gamemode = GameController.MODE_FREE_FOR_ALL;
     }
     void OnTargetsClick()
     {
         SceneManager.LoadScene("Intermission", LoadSceneMode.Single);
+        GameController.gamemode = GameController.MODE_TARGETS;
     }
 }

@@ -26,9 +26,11 @@ public class IntermissionScript : MonoBehaviour {
     void On2MinClick()
     {
         SceneManager.LoadScene("scene", LoadSceneMode.Single);
+        GameController.maplength = GameController.MODE_2MIN;
     }
     void OnInfiniteClick()
     {
         SceneManager.LoadScene("scene", LoadSceneMode.Single);
+        GameController.maplength = GameController.MODE_INFINITE;
     }
 }

@@ -25,6 +25,7 @@ public class Plane1 : MonoBehaviour
     public int famePoints = 0;
     public float trailTime = 1;
     public float timeOfDeath = 0;
+    public float respawnProtection = 0.5f;
     public GameObject scoreUIText;
     public Vector3 startPosition;
     public Quaternion startRotation;
@@ -32,6 +33,7 @@ public class Plane1 : MonoBehaviour
     public List<GameObject> planesTargettingMe = new List<GameObject>();
     public Color color;
     public TrailRenderer trailColor;
+
 
     void Awake()
     {
@@ -46,6 +48,7 @@ public class Plane1 : MonoBehaviour
         startRotation = transform.rotation;
 
         RandomTarget();
+
     }
 
 
@@ -64,7 +67,10 @@ public class Plane1 : MonoBehaviour
         if (alive)
         {
             this.gameObject.GetComponent<TrailRenderer>().time = trailTime;
+            respawnProtection -= Time.deltaTime;
         }
+
+
 
 
 
@@ -96,6 +102,8 @@ public class Plane1 : MonoBehaviour
         }
         UpdateTargetingMe();
         CheckRespawn();
+
+        print(respawnProtection);
     }
 
     void FixedUpdate()
@@ -180,6 +188,7 @@ public class Plane1 : MonoBehaviour
             }
         }
 
+
     }
 
     public void InfiniteMap()
@@ -210,22 +219,27 @@ public class Plane1 : MonoBehaviour
 
     public void CheckRespawn()
     {
-        if (!alive && Time.realtimeSinceStartup - timeOfDeath > 4)
+        if (!alive && Time.realtimeSinceStartup - timeOfDeath > 3)
         {
             alive = true;
             deathSpin = false;
             transform.rotation = startRotation;
             transform.position = startPosition;
-        } else if (!alive && Time.realtimeSinceStartup - timeOfDeath > 3.8f)
+            respawnProtection = .5f;
+        } else if (!alive && Time.realtimeSinceStartup - timeOfDeath > 2.8f)
         {
             this.gameObject.GetComponent<TrailRenderer>().time = 0;
-        }
+        }   
     }
 
 
-
     void OnTriggerEnter(Collider other)
-    {
+    {   
+        if (respawnProtection >= 0)
+        { 
+            return;
+        }
+
         if (other.gameObject.name.StartsWith("Bullet")
             && other.gameObject.GetComponent<BulletScript>().mainPlane != this.gameObject)
         {
