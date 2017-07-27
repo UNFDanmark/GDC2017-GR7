@@ -10,26 +10,36 @@ ModelImporter:
     100004: Propel
     100006: Propel001
     100008: Propel2
+    100010: PilotBody
+    100012: PilotHead
     400000: Cylinder002
     400002: //RootNode
     400004: Propel
     400006: Propel001
     400008: Propel2
+    400010: PilotBody
+    400012: PilotHead
     2300000: Cylinder002
     2300002: //RootNode
     2300004: Propel
     2300006: Propel001
     2300008: Propel2
+    2300010: PilotBody
+    2300012: PilotHead
     3300000: Cylinder002
     3300002: //RootNode
     3300004: Propel
     3300006: Propel001
     3300008: Propel2
+    3300010: PilotBody
+    3300012: PilotHead
     4300000: Object
     4300002: Cylinder002
     4300004: Propel
     4300006: Propel001
     4300008: Propel2
+    4300010: PilotBody
+    4300012: PilotHead
     7400000: Take 001
     9500000: //RootNode
   materials:
@@ -56,7 +66,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 2
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
