@@ -20,7 +20,6 @@ public class ScoreContext : IComparable<ScoreContext>
 
     public int CompareTo(ScoreContext other)
     {
-        //return other.score - score - (10 * id);
         if (other.score > this.score)
         {
             return 1;

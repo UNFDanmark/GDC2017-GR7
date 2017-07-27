@@ -11,24 +11,17 @@ public class MenuMusic : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
-	}
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Awake()
     {
         DontDestroyOnLoad(transform.gameObject);
 
         if (GameObject.FindObjectsOfType<MenuMusic>().Length > 1)
-        {
-            Destroy(gameObject);
-        }
-
-        SceneManager.activeSceneChanged += SceneManager_activeSceneChanged;
-    }
-
-    private void SceneManager_activeSceneChanged(Scene arg0, Scene arg1)
-    {
-        if(SceneManager.GetActiveScene().name == "scene")
         {
             Destroy(gameObject);
         }

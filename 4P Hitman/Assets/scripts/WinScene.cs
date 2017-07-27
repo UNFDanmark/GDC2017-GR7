@@ -20,6 +20,9 @@ public class WinScene : MonoBehaviour {
     {
         spinStart = Time.time;
         GameObject.Find("ReturnButton").GetComponent<Button>().onClick.AddListener(OnReturnClick);
+        List<ScoreContext> list = PauseScreen.scores;
+        list.Sort();
+        GameObject.Find("Paper").GetComponent<SpriteRenderer>().sprite = winningScreens[PauseScreen.scores[0].id];
     }
 
     void Awake()
@@ -58,7 +61,6 @@ public class WinScene : MonoBehaviour {
     public void HandleScores()
     {
         List<ScoreContext> list = PauseScreen.scores;
-        list.Sort();
 
         scoreText1.GetComponent<Text>().text = PauseScreen.scores[0].score.ToString();
         scoreText1.GetComponent<Text>().color = PauseScreen.scores[0].color;
@@ -71,8 +73,6 @@ public class WinScene : MonoBehaviour {
 
         scoreText4.GetComponent<Text>().text = PauseScreen.scores[3].score.ToString();
         scoreText4.GetComponent<Text>().color = PauseScreen.scores[3].color;
-
-        GameObject.Find("Paper").GetComponent<SpriteRenderer>().sprite = winningScreens[PauseScreen.scores[0].id];
     }
 }
 
