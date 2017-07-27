@@ -11,6 +11,7 @@ public class SoundScript : MonoBehaviour {
     public AudioSource Audio;
     public float tid = 0;
     public int Tauntdelay = 5;
+    public AudioSource Audio2;
 
     public void TauntsFunction(int Lyd)
     {
@@ -20,7 +21,16 @@ public class SoundScript : MonoBehaviour {
             Audio.Play();
             tid = Time.time + Tauntdelay;
         }
+        
 
+    }
+
+    public void ExplosionFunction()
+    {
+        if (!Audio2.isPlaying)
+        {
+            Audio2.Play();
+        }
     }
 	
 	// Update is called once per frame
