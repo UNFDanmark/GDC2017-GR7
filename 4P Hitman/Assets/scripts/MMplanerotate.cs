@@ -8,11 +8,11 @@ using UnityEngine.SceneManagement;
 public class MMplanerotate : MonoBehaviour {
 
     public float spinbot = 0.5f;
+    public List<Texture> textures;
 
     // Use this for initialization
     void Start () {
-
-
+        gameObject.GetComponent<Renderer>().material.mainTexture = textures[UnityEngine.Random.Range(0, 3)];
         GameObject.Find("ExitButton").GetComponent<Button>().onClick.AddListener(OnExitClick);
         GameObject.Find("CreditsButton").GetComponent<Button>().onClick.AddListener(OnCreditsClick);
         GameObject.Find("FFAButton").GetComponent<Button>().onClick.AddListener(OnFFAClick);

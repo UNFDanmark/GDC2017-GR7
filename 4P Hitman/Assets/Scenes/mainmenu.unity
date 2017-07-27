@@ -168,6 +168,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spinbot: 0.5
+  textures:
+  - {fileID: 2800000, guid: d08b14212aa28b643b8b52be14a314ad, type: 3}
+  - {fileID: 2800000, guid: 6e765bea72833df4684f5f0a17df915d, type: 3}
+  - {fileID: 2800000, guid: 0bec239480950184c807c6270e56e0c5, type: 3}
+  - {fileID: 2800000, guid: 32ed83c11aad0964dbae5e8981626ce8, type: 3}
 --- !u!1 &413016513
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +490,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 180}
+  m_AnchoredPosition: {x: 0, y: 228}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719800910
@@ -915,15 +920,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.05
+      value: 5.02
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: b434b1f1e48c4e1488367b87ed573aa5, type: 3}
       propertyPath: m_LocalRotation.x

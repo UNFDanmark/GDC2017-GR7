@@ -220,14 +220,14 @@ public class Plane1 : MonoBehaviour
 
     public void CheckRespawn()
     {
-        if (!alive && Time.realtimeSinceStartup - timeOfDeath > 3)
+        if (!alive && Time.realtimeSinceStartup - timeOfDeath > 2)
         {
             alive = true;
             deathSpin = false;
             transform.rotation = startRotation;
             transform.position = startPosition;
-            respawnProtection = .5f;
-        } else if (!alive && Time.realtimeSinceStartup - timeOfDeath > 2.8f)
+            respawnProtection = 1f;
+        } else if (!alive && Time.realtimeSinceStartup - timeOfDeath > 1.5f)
         {
             this.gameObject.GetComponent<TrailRenderer>().time = 0;
         }   
@@ -264,7 +264,7 @@ public class Plane1 : MonoBehaviour
         } else if (other.gameObject.name.StartsWith("Plane"))
         {
             Death();
-            famePoints -= 50;
+            famePoints -= 25;
         }
          
     }

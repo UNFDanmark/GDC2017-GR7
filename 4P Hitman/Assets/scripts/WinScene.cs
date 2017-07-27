@@ -20,11 +20,6 @@ public class WinScene : MonoBehaviour {
     {
         spinStart = Time.time;
         GameObject.Find("ReturnButton").GetComponent<Button>().onClick.AddListener(OnReturnClick);
-        //scoreText1.SetActive(false);
-        //scoreText2.SetActive(false);
-        //scoreText3.SetActive(false);
-        //scoreText4.SetActive(false);
-        HandleScores();
     }
 
     void Awake()
@@ -54,10 +49,7 @@ public class WinScene : MonoBehaviour {
 
             if(spinRemaining == 0)
             {
-                //scoreText1.SetActive(true);
-                //scoreText2.SetActive(true);
-                //scoreText3.SetActive(true);
-                //scoreText4.SetActive(true);
+                HandleScores();
             }
         }
 

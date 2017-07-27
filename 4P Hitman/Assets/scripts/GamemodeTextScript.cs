@@ -10,7 +10,9 @@ public class GamemodeTextScript : MonoBehaviour {
         if (GameController.gamemode == GameController.MODE_TARGETS)
         {
             gameObject.GetComponent<Text>().text = ("Targets");
-        }else
+            
+        }
+        else
         {
             gameObject.GetComponent<Text>().text = ("Free For All");
         }
