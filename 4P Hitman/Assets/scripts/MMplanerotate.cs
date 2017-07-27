@@ -17,7 +17,6 @@ public class MMplanerotate : MonoBehaviour {
         GameObject.Find("CreditsButton").GetComponent<Button>().onClick.AddListener(OnCreditsClick);
         GameObject.Find("FFAButton").GetComponent<Button>().onClick.AddListener(OnFFAClick);
         GameObject.Find("TargetsButton").GetComponent<Button>().onClick.AddListener(OnTargetsClick);
-
     }
 
     // Update is called once per frame
@@ -42,15 +41,11 @@ public class MMplanerotate : MonoBehaviour {
     }
     void OnFFAClick()
     {
-        SceneManager.LoadScene("Scene", LoadSceneMode.Single);
-        GameController.gamemode = 0;
+        SceneManager.LoadScene("Intermission", LoadSceneMode.Single);
+        
     }
     void OnTargetsClick()
     {
-        SceneManager.LoadScene("Scene", LoadSceneMode.Single);
-        GameController.gamemode = 1;
+        SceneManager.LoadScene("Intermission", LoadSceneMode.Single);
     }
-
-
-
 }
